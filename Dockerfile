@@ -19,7 +19,7 @@ RUN apt-get clean all && \
   apt-get purge && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
  
-RUN Rscript -e "install.packages(c('rmarkdown', 'tidyverse', 'ggplot2', 'xts', 'zoo'));"
+RUN Rscript -e "install.packages(c('forecast', 'lubridate', 'ggplot2', 'xts', 'zoo'));"
  
 COPY .Rprofile /home/rstudio/
 
