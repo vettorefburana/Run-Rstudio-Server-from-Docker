@@ -44,6 +44,9 @@ After that, new packages can be installed via the ```install.packages()``` comma
 
 5) Once done, stop the container either via CTRL + C or ```docker stop```.
 
+![image](https://user-images.githubusercontent.com/74903161/145717624-0d51a0cd-203a-4d2f-8e49-3bf15f9be62b.png)
+
+
 Examples:
 ------------------------------------------------------------------------------------------------------------------------------------
 
