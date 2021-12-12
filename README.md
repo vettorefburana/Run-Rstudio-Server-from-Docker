@@ -64,7 +64,7 @@ and saves a csv file with the ranked variable importance in the same folder. The
 
 References: 
 ------------------------------------------------------------------------------------------------------------------------------------
-https://github.com/davetang/learning_docker
-https://www.kaggle.com/grosvenpaul/beginners-guide-to-eda-and-random-forest-using-r#exploratory-data-analysis
+* https://github.com/davetang/learning_docker
+* https://www.kaggle.com/grosvenpaul/beginners-guide-to-eda-and-random-forest-using-r#exploratory-data-analysis
 
 
