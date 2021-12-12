@@ -19,7 +19,7 @@ Execution:
 ---------------------------------------------------------------------------------------------------------------------------------
 1) Add a ```packages``` directory on the host filesystem. This folder will be used for installing R packages locally from RStudio Server.
 
-2) From the terminal, go to the folder where the Dockerfile and the .Rprofile files are and run the container.
+2) From the terminal, go to the folder where the Dockerfile and the .Rprofile files are and run the container:
 
 ```rb
 
