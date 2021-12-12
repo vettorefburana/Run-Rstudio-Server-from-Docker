@@ -38,7 +38,7 @@ The .Rprofile file contains the line ```.libPaths('/packages/')```, which tells 
 
 ![image](https://user-images.githubusercontent.com/74903161/145717624-0d51a0cd-203a-4d2f-8e49-3bf15f9be62b.png)
 
-5) On RStudio Server, set the library path to ```packages```, so that installed packages are stored locally and do not need to be re-installed every time.
+5) In RStudio Server, set the library path to ```packages```, so that installed packages are stored locally and do not need to be re-installed every time:
 
 ```rb
 
