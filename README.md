@@ -32,7 +32,7 @@ docker run --rm \
 rocker/verse:4.1.0
 
 ```
-The .Rprofile file contains the line '.libPaths('/packages/')', which tells R to look for packages in /packages/. When the RStudio Server container is started, a volume is mounted which lets the host filesystem share the folder with all the R packages with the container filesystem. That way, all the packages that will be saved in the folder by the container will persist after the container is turned off. Additionally, a volume ```scripts``` for storing R scripts and a volume ```data``` for the data directory are mounted.
+The .Rprofile file contains the line '.libPaths('/packages/')', which tells R to look for packages in ```packages```. When the RStudio Server container is started, a volume is mounted which lets the host filesystem share the folder where the R packages are saved with the container filesystem. That way, all the packages that will be saved in the folder by the container will persist after the container is turned off. Additionally, a volume ```scripts``` for storing R scripts and a volume ```data``` for the data directory are mounted.
 
 3) If the container ran without errors, navigate to http://localhost:8888/, insert username ```rstudio``` and password ```password``` and you can start using Rstudio Server:
 
