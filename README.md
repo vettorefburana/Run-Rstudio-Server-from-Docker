@@ -11,9 +11,9 @@ rocker/verse:4.1.0
 
 Execution: 
 
-1) Add a ```rb packages``` directory on the host filesystem. This folder will be used for installing R packages locally from RStudio Server.
+1) Add a ```packages``` directory on the host filesystem. This folder will be used for installing R packages locally from RStudio Server.
 
-2) From the terminal, go to the folder where the Dockerfile and the .Rprofile files are (```rb  ${PWD}```) and run the container
+2) From the terminal, go to the folder where the Dockerfile and the .Rprofile files are (```${PWD}```) and run the container
 
 ```rb
 
