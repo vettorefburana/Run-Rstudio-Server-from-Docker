@@ -5,7 +5,7 @@ Objective:
 Run RStudio Server from a Docker container and mount host directories to Docker home.
 
 Docker is a program that allows to launch and stop multiple operating systems (called containers) on your machine (the host).
-Docker is designed to enclose environments inside an image / a container, thus solving dependency and reproducibility issues. All you need is an installation of Docker on your computer and the Dockerfile corresponding to the container you whish to utilize.
+Docker is designed to enclose environments inside an image / a container, thus solving dependency and reproducibility issues. All you need is an installation of Docker on your computer and the Dockerfile corresponding to the container you wish to utilize.
 
 The container on this repository is built from the following image from DockerHub:
 
