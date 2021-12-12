@@ -1,6 +1,5 @@
 FROM rocker/verse:4.1.0
  
- 
 RUN apt-get clean all && \
   apt-get update && \
   apt-get upgrade -y && \
