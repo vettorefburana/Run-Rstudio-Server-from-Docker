@@ -55,7 +55,7 @@ Examples:
 
 This repository contains some example files to use in Rstudio Server. 
 
-* The script ```analysis.R``` in ```scripts``` trains a RandomForest model using the data from  ```winequality-red.csv``` in ```data```
+* The script ```analysis.R``` in ```scripts``` trains a Random Forest model using the data from  ```winequality-red.csv``` in ```data```
 and saves a csv file with the ranked variable importance in the same folder. The R package ```randomForest``` must be installed in RStudio Server before running the script.
 * The rmarkdown file ```report.R``` in ```scripts``` produces a report with some text and plots and saves it in the same folder.
 
