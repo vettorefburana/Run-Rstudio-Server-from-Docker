@@ -31,7 +31,7 @@ rocker/verse:4.1.0
 ```
 The .Rprofile file contains the line '.libPaths('/packages/')', which tells R to look for packages in /packages/. When the RStudio Server container is started, a volume is mounted which connects the local folder with all the R packages to the container filesystem, so that packages do not need to be re-installed every time a new container is started. Additionally, a volume ```scripts``` for storing R scripts and a volume ```data``` for the data directory are mounted.
 
-3) If the container ran without errors, access RStudio Server at http://localhost:8888/ and insert username ```rstudio``` and password ```password```.
+3) If the container ran without errors, navigate to http://localhost:8888/, insert username ```rstudio``` and password ```password``` and you can start using Rstudio Server:
 
 ![image](https://user-images.githubusercontent.com/74903161/145717624-0d51a0cd-203a-4d2f-8e49-3bf15f9be62b.png)
 
