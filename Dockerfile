@@ -22,6 +22,5 @@ RUN apt-get clean all && \
  
 RUN Rscript -e "install.packages(c('rmarkdown', 'tidyverse', 'ggplot2', 'xts', 'zoo'));"
  
-COPY user-settings /home/rstudio/.rstudio/monitored/user-settings/user-settings
 COPY .Rprofile /home/rstudio/
 
