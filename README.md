@@ -4,6 +4,9 @@ Objective:
 --------------------------------------------------------------------------------------------------------------------
 Run RStudio Server from a Docker container and mount host directories to Docker home.
 
+Docker is a program that allows to launch and stop multiple operating systems (called containers) on your machine (the host).
+Docker is designed to enclose environments inside an image / a container, thus solving dependency and reproducibility issues. All you need is an installation of Docker on your computer and the Dockerfile corresponding to the container you whish to utilize.
+
 The container is built from the following image from DockerHub:
 
 ```rb
@@ -29,7 +32,7 @@ docker run --rm \
 rocker/verse:4.1.0
 
 ```
-The .Rprofile file contains the line '.libPaths('/packages/')', which tells R to look for packages in /packages/. When the RStudio Server container is started, a volume is mounted which connects the local folder with all the R packages to the container filesystem, so that packages do not need to be re-installed every time a new container is started. Additionally, a volume ```scripts``` for storing R scripts and a volume ```data``` for the data directory are mounted.
+The .Rprofile file contains the line '.libPaths('/packages/')', which tells R to look for packages in /packages/. When the RStudio Server container is started, a volume is mounted which lets the host filesystem share the folder with all the R packages with the container filesystem. That way, all the packages that will be saved in the folder by the container will persist after the container is turned off. Additionally, a volume ```scripts``` for storing R scripts and a volume ```data``` for the data directory are mounted.
 
 3) If the container ran without errors, navigate to http://localhost:8888/, insert username ```rstudio``` and password ```password``` and you can start using Rstudio Server:
 
@@ -45,7 +48,7 @@ The .Rprofile file contains the line '.libPaths('/packages/')', which tells R to
 
 After that, new packages can be installed via the ```install.packages()``` command. Remember to set the library path every time you run RStudio Server.
 
-5) Once done, stop the container either via CTRL + C or ```docker stop```.
+5) At this point, you can use R and Rmarkdown from RStudio Server as you usually would on your machine. You can also write and read files from your local filesystem. Once you are done, stop the running container either via CTRL + C or ```docker stop```.
 
 
 
