@@ -48,10 +48,7 @@ The .Rprofile file contains the line '.libPaths('/packages/')', which tells R to
 
 After that, new packages can be installed via the ```install.packages()``` command. Remember to set the library path every time you run RStudio Server.
 
-5) At this point, you can use R and Rmarkdown from RStudio Server as you usually would on your machine. You can also write and read files from your local filesystem. Once you are done, stop the running container either via CTRL + C or ```docker stop```.
-
-
-
+5) At this point, you can use R and Rmarkdown from RStudio Server as you usually would on your machine. You can also write and read files from your local filesystem, using the mounted volumes. Once you are done, stop the running container either via CTRL + C or ```docker stop```.
 
 Examples:
 ------------------------------------------------------------------------------------------------------------------------------------
