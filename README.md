@@ -19,7 +19,17 @@ Execution:
 ---------------------------------------------------------------------------------------------------------------------------------
 1) Add a ```packages``` directory on the host filesystem. This folder will be used for installing R packages locally from RStudio Server.
 
-2) From the terminal, go to the folder where the Dockerfile and the .Rprofile files are and run the container:
+2) From the terminal, go to the folder where the Dockerfile and the .Rprofile files are and build the container:
+
+```rb
+
+docker build -t rstudio_server .
+
+```
+
+If the image was built correctly you should see it in the list of images on disk when you run ```docker images```.
+
+3) Run the container with the following command: 
 
 ```rb
 
@@ -29,7 +39,7 @@ docker run --rm \
 -v ${PWD}/scripts:/home/rstudio/scripts \
 -v ${PWD}/data:/home/rstudio/data \
 -e PASSWORD=password \
-rocker/verse:4.1.0
+rstudio_server
 
 ```
 The .Rprofile file contains the line ```.libPaths('/packages/')```, which tells R to look for packages in ```packages```. When the RStudio Server container is started, a volume is mounted which lets the host filesystem share the folder where the R packages are saved with the container filesystem. That way, all the packages that will be saved in the folder by the container will persist after the container is turned off. Additionally, a volume ```scripts``` for storing R scripts and a volume ```data``` for the data directory are mounted (change ```${PWD}``` to your local directory). The Dockerfile specifies some R packages to be installed when running the container; the list can be expanded with additional packages.
