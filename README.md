@@ -26,8 +26,7 @@ Execution:
 docker build -t rstudio_server .
 
 ```
-
-If the image was built correctly you should see it in the list of images on disk when you run ```docker images```.
+The Dockerfile specifies some latex and R packages to be installed when running the container; the list can be expanded with additional packages. If the image was built correctly you should see it in the list of images on disk when you run ```docker images```.
 
 3) Run the container with the following command: 
 
@@ -42,7 +41,7 @@ docker run --rm \
 rstudio_server
 
 ```
-The .Rprofile file contains the line ```.libPaths('/packages/')```, which tells R to look for packages in ```packages```. When the RStudio Server container is started, a volume is mounted which lets the host filesystem share the folder where the R packages are saved with the container filesystem. That way, all the packages that will be saved in the folder by the container will persist after the container is turned off. Additionally, a volume ```scripts``` for storing R scripts and a volume ```data``` for the data directory are mounted (change ```${PWD}``` to your local directory). The Dockerfile specifies some R packages to be installed when running the container; the list can be expanded with additional packages.
+The .Rprofile file contains the line ```.libPaths('/packages/')```, which tells R to look for packages in ```packages```. When the RStudio Server container is started, a volume is mounted which lets the host filesystem share the folder where the R packages are saved with the container filesystem. That way, all the packages that will be saved in the folder by the container will persist after the container is turned off. Additionally, a volume ```scripts``` for storing R scripts and a volume ```data``` for the data directory are mounted (change ```${PWD}``` to your local directory).
 
 3) If the container ran without errors, navigate to http://localhost:8888/, insert username ```rstudio``` and password ```password``` and you can start using Rstudio Server:
 
