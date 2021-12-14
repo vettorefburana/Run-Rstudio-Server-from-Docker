@@ -20,6 +20,15 @@ RUN apt-get clean all && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
  
 RUN Rscript -e "install.packages(c('forecast', 'lubridate', 'ggplot2', 'xts', 'zoo'));"
- 
+
+RUN tlmgr update --self --all && \
+  tlmgr install fancyhdr multirow listings fancyvrb  \
+  xcolor amsmath hyperref infwarerr pdftexcmds hycolor gettitlestring \
+  pdftexcmds uniquecounter fancyvrb stringenc rerunfilecheck \
+  zapfding refcount pdfescape letltxmacro \
+  geometry etexcmds bitset bigintcalc auxhook xcolor framed \
+  etoolbox kvsetkeys ltxcmds ltxcmds iftex latex-amsmath-dev epstopdf-pkg
+
+
 COPY .Rprofile /home/rstudio/
 
