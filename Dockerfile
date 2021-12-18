@@ -19,9 +19,9 @@ RUN apt-get clean all && \
   apt-get purge && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR /app
-
 ADD requirements.r .
+
+RUN mkdir -p /R
  
 RUN Rscript requirements.r
 
@@ -37,5 +37,10 @@ RUN tlmgr update --self --all && \
   fontspec tipa unicode-math xunicode bbm-macros wrapfig \ 
   kvoptions colortbl environ trimspaces mdwtools koma-script newfloat pdflscape 
 
-COPY .Rprofile /app
+COPY .Rprofile .
+COPY /R/analysis.R /R/analsysis.R
+
+CMD ["Rscript", "/R/render.R"]
+
+
 

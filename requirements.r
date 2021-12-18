@@ -1,12 +1,8 @@
 
-
-install.packages("MASS")
-install.packages("zoo")
-install.packages("xts")
-install.packages("ggplot2")
-install.packages("ggcorrplot")
+install.packages("dplyr")
+install.packages("foreign")
+install.packages("tidyr")
+install.packages("car")
+install.packages("plotly")
 install.packages("kableExtra")
-install.packages("forecast")
-install.packages("data.table")
-install.packages("Hmisc")
-install.packages("olsrr")
+install.packages("randomForest")
