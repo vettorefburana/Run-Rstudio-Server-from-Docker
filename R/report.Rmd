@@ -1,0 +1,51 @@
+---
+title: "Example"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+Load `/packages` directory.
+
+```{r add_lib_path}
+
+.libPaths(new = "/packages")
+
+```
+
+Load library.
+
+```{r load_lib}
+
+library(ggplot2)
+
+```
+
+Load data.
+
+```{r load_data}
+
+#setwd("~")
+redwine = read.csv("./winequality-red.csv")
+
+```
+
+## Commentary
+
+This notebook presents a very basic analysis of results from the red wine quality dataset.  
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+ggplot(redwine,aes(x=quality))+geom_bar(stat = "count",position = "dodge")+
+  scale_x_continuous(breaks = seq(3,8,1))+
+  ggtitle("Distribution of Red Wine Quality Ratings")+
+  theme_classic()
+
+```
