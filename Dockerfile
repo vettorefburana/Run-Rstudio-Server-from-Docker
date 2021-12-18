@@ -40,7 +40,7 @@ RUN tlmgr update --self --all && \
 COPY .Rprofile .
 COPY /R/analysis.R /R/analsysis.R
 
-CMD ["Rscript", "/R/render.R"]
+#####CMD ["Rscript", "/R/render.R"]
 
 
 
