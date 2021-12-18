@@ -31,7 +31,6 @@ Load data.
 
 ```{r load_data}
 
-#setwd("~")
 redwine = read.csv("./winequality-red.csv")
 
 ```
