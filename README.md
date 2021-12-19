@@ -66,14 +66,14 @@ This repository contains some example files to use in Rstudio Server.
 * The script ```analysis.R``` in ```R``` trains a Random Forest model using the data from  ```winequality-red.csv```
 and saves a csv file with the ranked variable importance in the same folder; the Rmarkdown file ```report.R``` produces a report with some plots. 
 
-* To execute the scripts from the command line, uncomment the line 
+* To execute the scripts from the command line, uncomment the following line in the Dockerfile: 
 
 ```rb
 
 CMD ["Rscript", "/R/render.R"]
 
 ```
-in the Dockerfile, rebuild the container and run it with: 
+rebuild the container and run it with: 
 
 ```rb
 
