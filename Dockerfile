@@ -38,7 +38,6 @@ RUN tlmgr update --self --all && \
   kvoptions colortbl environ trimspaces mdwtools koma-script newfloat pdflscape 
 
 COPY .Rprofile .
-COPY /R/analysis.R /R/analsysis.R
 
 #####CMD ["Rscript", "/R/render.R"]
 
