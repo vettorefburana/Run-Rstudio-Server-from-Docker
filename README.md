@@ -15,7 +15,7 @@ rocker/verse:4.1.0
 
 ```
 
-Execution: 
+Run RStudio Server: 
 ---------------------------------------------------------------------------------------------------------------------------------
 1) Add a ```packages``` directory on the host filesystem. This folder will be used for installing R packages locally from RStudio Server.
 
@@ -57,6 +57,49 @@ The .Rprofile file contains the line ```.libPaths('/packages/')```, which tells 
 After that, new packages can be installed via the ```install.packages()``` command. Remember to set the library path every time you run RStudio Server.
 
 5) At this point, you can use R and Rmarkdown from RStudio Server as you usually would on your machine. You can also write and read files from your local filesystem, using the mounted volumes. Once you are done, stop the running container either via CTRL + C or ```docker stop```.
+
+Run script from command line: 
+---------------------------------------------------------------------------------------------------------------------------------
+
+To execute an R script from the command line, add the following line at the end of the Dockerfile 
+
+```rb
+
+CMD ["Rscript", "${PWD}/script_name.R"]
+
+```
+
+rebuild the container and run it with: 
+
+```rb
+
+docker run --rm \
+-v ${PWD}/packages:/packages \
+-v ${PWD}/R:/R \
+-e PASSWORD=password \
+rstudio_server
+
+```
+
+Run with proxy: 
+---------------------------------------------------------------------------------------------------------------------------------
+
+1) To run the container behind a corporate proxy, go to Docker Desktop under Settings -> Resources -> Proxies and input your proxy with the form
+ 
+ ```rb
+
+http://user:password@proxy:port
+
+```
+
+2) Add an environment variable to the Dockerfile 
+
+```rb
+
+ENV http_proxy="http://user:password@proxy:port"
+ENV https_proxy="http://user:password@proxy:port"
+
+```
 
 Examples:
 ------------------------------------------------------------------------------------------------------------------------------------
