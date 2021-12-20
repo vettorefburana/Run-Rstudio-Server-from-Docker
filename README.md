@@ -126,16 +126,6 @@ and saves a csv file with the ranked variable importance in the same folder; the
 CMD ["Rscript", "/R/render.R"]
 
 ```
-rebuild the container and run it with: 
-
-```rb
-
-docker run --rm \
--v ${PWD}/packages:/packages \
--v ${PWD}/R:/R \
--e PASSWORD=password \
-rstudio_server
-
-```
+rebuild the container and run it.
 
 
