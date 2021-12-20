@@ -84,7 +84,9 @@ rstudio_server
 Run with proxy: 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-1) To run the container behind a corporate proxy, go to Docker Desktop under Settings -> Resources -> Proxies and input your proxy with the form
+To run the container behind a corporate proxy:
+
+1) Go to Docker Desktop under Settings -> Resources -> Proxies and input your proxy with the form
  
  ```rb
 
@@ -98,6 +100,14 @@ http://user:password@proxy:port
 
 ENV http_proxy="http://user:password@proxy:port"
 ENV https_proxy="http://user:password@proxy:port"
+
+```
+
+3) Build the container with 
+
+```rb
+
+docker build --network=host -t rstudio_server .
 
 ```
 
